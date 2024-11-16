@@ -14,9 +14,9 @@ jobs:
 
     steps:
     - name: Pull Docker image
-      run: sudo docker pull danishyousuf/aws-pipeline:latest
+      run:  docker pull danishyousuf/aws-pipeline:latest
     - name : Delete old Docker container
-      run: sudo docker rm -f cicd-pipeline-container || true
+      run:  docker rm -f cicd-pipeline-container || true
     - name: Run Docker container
-      run: sudo docker run -d -p 3005:3005 --name cicd-pipeline-container danishyousuf/aws-pipeline
+      run:  docker run -d -p 3005:3005 --name cicd-pipeline-container danishyousuf/aws-pipeline
       
